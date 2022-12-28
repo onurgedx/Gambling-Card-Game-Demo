@@ -10,6 +10,16 @@ namespace Game.Managers
 
         [SerializeField] private List<GainableData> _gainableDataList;
         
+        public GainableData GetRandomGainableData()
+        {
+
+            int randomIndexForGainableData;
+            randomIndexForGainableData = Random.Range(0, _gainableDataList.Count);
+
+            return _gainableDataList[randomIndexForGainableData];
+
+        }
+
 
     }
 

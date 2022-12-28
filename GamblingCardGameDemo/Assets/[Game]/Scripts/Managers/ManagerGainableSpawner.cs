@@ -7,8 +7,19 @@ namespace Game.Managers
     public class ManagerGainableSpawner : MonoSingleton<ManagerGainableSpawner>
     {
 
-        [SerializeField] private List<IGainable> _gainables;
-         
+        [SerializeField] private List<IGainable> _gainables= new List<IGainable>();
+
+        private void OnEnable()
+        {
+            ManagerTest.Instance.OnKeyADown += DetermineNewGainables;
+
+
+        }
+        private void OnDisable()
+        {
+            ManagerTest.Instance.OnKeyADown -= DetermineNewGainables;
+            
+        }
         public void AddGainable(IGainable  gainable)
         {
 
@@ -30,7 +41,7 @@ namespace Game.Managers
 
             for (int i = 0; i < _gainables.Count; i++)
             {
-                //_gainables[i].SetGainableData();
+                _gainables[i].SetGainableData(ManagerDataGainables.Instance.GetRandomGainableData());
 
 
             }

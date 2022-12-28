@@ -10,6 +10,8 @@ namespace Game.Enums
 
         Chest,
         Gold,
+        Cash,
+        Cure,
         Helmet,
         WeaponMelee,
         WeaponShotgun,
@@ -17,8 +19,8 @@ namespace Game.Enums
         WeaponSmg,
         WeaponSniper,
         Projectile,
-        Upgrades
-
+        Upgrade,
+        VisualProp
 
            
 

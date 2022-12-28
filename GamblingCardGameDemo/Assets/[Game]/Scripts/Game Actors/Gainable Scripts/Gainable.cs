@@ -21,7 +21,10 @@ public class Gainable : MonoBehaviour ,IGainable
        
         
     }
-
+    private void OnDisable()
+    {
+        ManagerGainableSpawner.Instance.RemoveGainable(this);
+    }
 
     public void SetGainableData(GainableData gainableData)
     {

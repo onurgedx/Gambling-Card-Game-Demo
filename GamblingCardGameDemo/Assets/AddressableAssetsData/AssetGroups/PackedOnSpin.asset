@@ -1,0 +1,195 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: PackedOnSpin
+  m_EditorClassIdentifier: 
+  m_GroupName: PackedOnSpin
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 5f94d99abf2b3064a9222452cae96b89
+  m_SerializeEntries:
+  - m_GUID: 17e37ad984a1ec341989d2bcde93a8ce
+    m_Address: Assets/[Game]/Sprites/ui_content/UI_Icons_Vest_Points.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 223842ed48e6e2b42935852f1e864724
+    m_Address: Assets/[Game]/Sprites/ui_content/UI_Icons_Submachine_Points.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 665be8da3b668f447a99551bf6d2b131
+    m_Address: Assets/[Game]/Sprites/ui_content/UI_Icons_Sniper_Points.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: c3bd463e27bf66949a37a0d7abac0500
+    m_Address: Assets/[Game]/Sprites/ui_content/UI_Icons_SMG_Points.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: a9df7a2daaceafd44a4c4fff3651dc21
+    m_Address: Assets/[Game]/Sprites/ui_content/UI_Icons_Shotgun_Points.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 1930c589ebf154f48adfabb14d9750ce
+    m_Address: Assets/[Game]/Sprites/ui_content/UI_Icons_Rifle_Points.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: ca8e1f0d3516d394b9c88eff7b0a312a
+    m_Address: Assets/[Game]/Sprites/ui_content/UI_Icons_Pistol_Points.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: c6154caf1da415f4fa00a3e46d91c92f
+    m_Address: Assets/[Game]/Sprites/ui_content/UI_Icons_Knife_Points.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 215c1604c59422849934f24e30d73fc8
+    m_Address: Assets/[Game]/Sprites/ui_content/UI_Icons_Armor_Points.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 9c15ca33e822d95428935002c62f73dd
+    m_Address: Assets/[Game]/Sprites/ui_content/UI_Icon_Renders_tier3_sniper.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 7f4e489002eb3b9478c9a11ab631bb59
+    m_Address: Assets/[Game]/Sprites/ui_content/UI_Icon_Renders_tier3_smg.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: d5408d58e1ac5514ea5168b49448e208
+    m_Address: Assets/[Game]/Sprites/ui_content/UI_Icon_Renders_tier3_shotgun.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: ef2ad2d04a2537c4aab75b5bd13409b5
+    m_Address: Assets/[Game]/Sprites/ui_content/UI_Icon_Renders_tier2_rifle.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 48e95a71aefc48d46b60f87965d516a0
+    m_Address: Assets/[Game]/Sprites/ui_content/UI_Icon_Renders_tier2_mle.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 412fccdb588f2b9428744d3fa62e63b6
+    m_Address: Assets/[Game]/Sprites/ui_content/UI_Icon_Renders_tier1_shotgun.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: dab4fd7c0396e9444bb0520c7a488412
+    m_Address: Assets/[Game]/Sprites/ui_content/ui_icon_render_t_cons_molotov.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 4609d13d7e15f0d46afe626b05fc803e
+    m_Address: Assets/[Game]/Sprites/ui_content/ui_icon_render_cons_healthshot_2_regenerator.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 78d8fa1c768a79f4f806b5092ba8fade
+    m_Address: Assets/[Game]/Sprites/ui_content/ui_icon_render_cons_healthshot_2_neurostim.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 0e4722549b4143f4e919e02fe03861e9
+    m_Address: Assets/[Game]/Sprites/ui_content/ui_icon_render_cons_grenade_m67.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 56c0c8b5410835d448a7a0d6aed039ef
+    m_Address: Assets/[Game]/Sprites/ui_content/ui_icon_render_cons_grenade_m26.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: e8c583336c2625f4b9cf2d3db90af5b7
+    m_Address: Assets/[Game]/Sprites/ui_content/ui_icon_mle_bayonet_summer_vice.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 95f7ec32f75f13b4a8c32f9e23360cab
+    m_Address: Assets/[Game]/Sprites/ui_content/ui_icon_mle_bayonet_easter_time.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 324ba1e591cd331418dc2ece86c46309
+    m_Address: Assets/[Game]/Sprites/ui_content/ui_icon_helmet_pumpkin.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 586f1ea826bad7b4aba36f916b936902
+    m_Address: Assets/[Game]/Sprites/ui_content/UI_icon_gold.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 4d365c17f1caf8649b1e510faedf4ecd
+    m_Address: Assets/[Game]/Sprites/ui_content/UI_icon_chest_super_nolight.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: b7c0ab8d25ffa0e46ae9a3d85ddf8506
+    m_Address: Assets/[Game]/Sprites/ui_content/UI_icon_chest_standart_nolight.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 719687dc8ae5b5744a10fbd5f7af9084
+    m_Address: Assets/[Game]/Sprites/ui_content/UI_icon_chest_small_noligt.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 199eeac1c10c1fd4c873a20b44e17662
+    m_Address: Assets/[Game]/Sprites/ui_content/UI_icon_chest_silver_nolight.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 6fbebf3721cf9664ba943c3d509a600a
+    m_Address: Assets/[Game]/Sprites/ui_content/UI_icon_chest_gold_nolight.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: eaad0ccff04e3134db28ae29007fc9a9
+    m_Address: Assets/[Game]/Sprites/ui_content/UI_icon_chest_Bronze_nolight.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 6c62bed97db62af48b4fe402a9dda33b
+    m_Address: Assets/[Game]/Sprites/ui_content/UI_icon_chest_big_nolight.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: ccee90b77922e22458cb6ac2f8f07fe7
+    m_Address: Assets/[Game]/Sprites/ui_content/UI_icon_cash.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 397e9465047102a4085c262535da7386
+    m_Address: Assets/[Game]/Sprites/ui_content/ui_icon_baseball_cap_easter.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 005f9f779d46c754fa3528d0c8e9df8e
+    m_Address: Assets/[Game]/Sprites/ui_content/ui_icon_aviator_glasses_easter.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 6943b8fefe78bb848a1f44d007016317, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 2553f38db7630114cbf1af6edf49b28a, type: 2}
+    - {fileID: 11400000, guid: b76c8a9f2e0976a4f95d17996a57fff7, type: 2}
