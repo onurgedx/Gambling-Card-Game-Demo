@@ -3,14 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ManagerLevel : MonoSingleton<ManagerLevel>
+namespace Game.Managers
 {
-   
-
-    
-
+    public class ManagerLevel : MonoSingleton<ManagerLevel>
+    {
 
 
+
+
+
+    }
 
 
 }

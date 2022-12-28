@@ -2,42 +2,44 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class ManagerObjectPooling : MonoSingleton<ManagerObjectPooling>
+namespace Game.Managers
 {
-
-    
-
-    [Serializable]
-    public class Pool<T> where T : Component
+    public class ManagerObjectPooling : MonoSingleton<ManagerObjectPooling>
     {
-        public T ReferancePrefab;
-        public List<T> PoolList;
-    
-        public T GetPoolMember()
+
+
+
+        [Serializable]
+        public class Pool<T> where T : Component
         {
-            for (int i = 0; i < PoolList.Count; i++)
+            public T ReferancePrefab;
+            public List<T> PoolList;
+
+            public T GetPoolMember()
             {
-                if (!PoolList[i].gameObject.activeInHierarchy)
+                for (int i = 0; i < PoolList.Count; i++)
                 {
-                    PoolList[i].gameObject.SetActive(true);
+                    if (!PoolList[i].gameObject.activeInHierarchy)
+                    {
+                        PoolList[i].gameObject.SetActive(true);
 
-                    return PoolList[i];
+                        return PoolList[i];
 
+                    }
                 }
-            }
 
-            GameObject poolMemberGameObject = Instantiate(ReferancePrefab.gameObject);
-            poolMemberGameObject.SetActive(true);
-            T poolMember = poolMemberGameObject.GetComponent<T>();
-            PoolList.Add(poolMember);
-            return poolMember;
+                GameObject poolMemberGameObject = Instantiate(ReferancePrefab.gameObject);
+                poolMemberGameObject.SetActive(true);
+                T poolMember = poolMemberGameObject.GetComponent<T>();
+                PoolList.Add(poolMember);
+                return poolMember;
+
+
+            }
 
 
         }
 
 
     }
-        
-   
 }
