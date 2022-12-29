@@ -10,7 +10,7 @@ public class WheelSpiner : MonoBehaviour
 
     public Action OnSpinStart;
     public Action OnSpinEnd;
-    public Action OnAfterAWhileSpinEnd;
+    public Action OnSpinEndDelayed;
     //public Action OnSpinEnd
     [SerializeField] private Transform _wheelTransform;
     [SerializeField] private WheelController _wheelController;
@@ -46,7 +46,7 @@ public class WheelSpiner : MonoBehaviour
         {
             yield return _waitforSecondsOfSpinEndDelay;
 
-            OnAfterAWhileSpinEnd?.Invoke();
+            OnSpinEndDelayed?.Invoke();
 
         }
 

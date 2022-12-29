@@ -12,7 +12,7 @@ public class WheelButtonActivateController : MonoBehaviour
     private void Start()
     {
         _buttonSpin.onClick.AddListener(DeactivateButton);
-        _wheelSpiner.OnAfterAWhileSpinEnd += ActivateButton ;
+        _wheelSpiner.OnSpinEndDelayed += ActivateButton ;
         
     }
     private void ActivateButton()

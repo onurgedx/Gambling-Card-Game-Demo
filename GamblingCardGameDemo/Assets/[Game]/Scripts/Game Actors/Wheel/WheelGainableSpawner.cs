@@ -13,13 +13,13 @@ public class WheelGainableSpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        _wheelSpiner.OnAfterAWhileSpinEnd += SpawnGainables;
+        _wheelSpiner.OnSpinEndDelayed += SpawnGainables;
         
     }
 
     private void OnDisable()
     {
-        _wheelSpiner.OnAfterAWhileSpinEnd -= SpawnGainables;
+        _wheelSpiner.OnSpinEndDelayed -= SpawnGainables;
         
 
     }
