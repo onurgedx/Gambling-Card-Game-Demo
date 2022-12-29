@@ -11,20 +11,11 @@ public class Gainable : MonoBehaviour ,IGainable
 
     private GainableData _gainableData;
 
+    
 
 
 
-    private void OnEnable()
-    {
-
-        ManagerGainableSpawner.Instance.AddGainable(this);
-       
-        
-    }
-    private void OnDisable()
-    {
-        ManagerGainableSpawner.Instance.RemoveGainable(this);
-    }
+    
 
     public void SetGainableData(GainableData gainableData)
     {

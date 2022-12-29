@@ -14,7 +14,7 @@ public class ScalerGainable : MonoBehaviour
     }
     private void OnDisable()
     {
-        _gainable.OnGainableDataChanged += RunScaleIncreaseEffect;
+        _gainable.OnGainableDataChanged -= RunScaleIncreaseEffect;
         
     }
 

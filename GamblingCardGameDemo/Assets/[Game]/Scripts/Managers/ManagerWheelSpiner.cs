@@ -12,11 +12,7 @@ namespace Game.Managers
     {
 
 
-        public Action OnWheelSpin;
         
-        public Action OnWheelSpinStart;
-        
-        public Action OnWheelSpinEnd;
 
         [SerializeField] private WheelRotateData _wheelRotateData;
          
@@ -24,30 +20,17 @@ namespace Game.Managers
 
 
 
-        [SerializeField] private Transform _wheelTransform;
 
 
-        private void OnEnable()
+        public void SpinWheel(Action onSpinStart, Action onSpinEnd, Transform wheelTransform)
         {
-            ManagerUiButtons.Instance.ButtonSpin.onClick.AddListener( SpinWheel);
-            
-        }
-        private void OnDisable()
-        {
-            ManagerUiButtons.Instance.ButtonSpin.onClick.RemoveListener( SpinWheel);
-            
-        }
-
-
-
-        private void SpinWheel()
-        {
+            onSpinStart?.Invoke();
             int randomindex = _wheelRotateData.GetRandomIndexAtAnglesList();
-            OnWheelSpinStart?.Invoke();
-            _wheelTransform.localRotation = Quaternion.identity;
-            _wheelTransform.DOLocalRotate(new Vector3(0, 0, _wheelRotateData.GetDesiredDestination(randomIndex:randomindex)), Durations.DurationWheelSpin, RotateMode.FastBeyond360)
+            
+            wheelTransform.localRotation = Quaternion.identity;
+            wheelTransform.DOLocalRotate(new Vector3(0, 0, _wheelRotateData.GetDesiredDestination(randomIndex:randomindex)), Durations.DurationWheelSpin, RotateMode.FastBeyond360)
                 .SetRelative(true).SetEase(Ease.OutBack)
-                .OnComplete(()=>OnWheelSpinEnd?.Invoke());
+                .OnComplete(()=>onSpinEnd?.Invoke());
 
 
         }
