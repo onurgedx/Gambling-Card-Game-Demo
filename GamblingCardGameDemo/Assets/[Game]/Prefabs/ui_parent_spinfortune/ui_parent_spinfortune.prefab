@@ -843,6 +843,7 @@ GameObject:
   - component: {fileID: 6746880221985388950}
   - component: {fileID: 3889768903393994530}
   - component: {fileID: 4738378409666341783}
+  - component: {fileID: 4103741989347354580}
   m_Layer: 5
   m_Name: ui_parent_spinfortune
   m_TagString: Untagged
@@ -911,6 +912,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7293ff2f0deddb48b7b321f713e98f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _wheelSpiner: {fileID: 3889768903393994530}
+--- !u!114 &4103741989347354580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2664860570351926796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d09a912ce09eea45b54fc71fa589fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buttonSpin: {fileID: 2664860569711900776}
   _wheelSpiner: {fileID: 3889768903393994530}
 --- !u!1 &2664860570502633716
 GameObject:
