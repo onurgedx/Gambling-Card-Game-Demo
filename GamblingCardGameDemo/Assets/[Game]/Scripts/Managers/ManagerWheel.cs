@@ -18,6 +18,11 @@ namespace Game.Managers
         
         public Action OnWheelSpinEnd;
 
+        [SerializeField] private WheelRotateData _wheelRotateData;
+         
+
+
+
 
         [SerializeField] private Transform _wheelTransform;
 
@@ -40,7 +45,7 @@ namespace Game.Managers
 
             OnWheelSpinStart?.Invoke();
 
-            _wheelTransform.DOLocalRotate(new Vector3(0, 0, 860), Durations.DurationWheelSpin, RotateMode.FastBeyond360)
+            _wheelTransform.DOLocalRotate(new Vector3(0, 0, _wheelRotateData.GetRandomDestination()), Durations.DurationWheelSpin, RotateMode.FastBeyond360)
                 .SetRelative(true).SetEase(Ease.OutBack)
                 .OnComplete(()=>OnWheelSpinEnd?.Invoke());
 

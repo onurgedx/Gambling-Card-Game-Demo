@@ -5,7 +5,7 @@ using UnityEngine.AddressableAssets;
 using Game.Enums;
 using UnityEngine.UI;
 
-[CreateAssetMenu(fileName ="GainableData",menuName ="GainableData")]
+[CreateAssetMenu(fileName ="GainableData",menuName ="Scriptables/GainableData")]
 public class GainableData : ScriptableObject
 {
         
