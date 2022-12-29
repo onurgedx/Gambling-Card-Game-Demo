@@ -8,7 +8,7 @@ using DG.Tweening;
 namespace Game.Managers
 {
 
-    public class ManagerWheel : MonoSingleton<ManagerWheel>
+    public class ManagerWheelSpiner : MonoSingleton<ManagerWheelSpiner>
     {
 
 
@@ -42,10 +42,10 @@ namespace Game.Managers
 
         private void SpinWheel()
         {
-
+            int randomindex = _wheelRotateData.GetRandomIndexAtAnglesList();
             OnWheelSpinStart?.Invoke();
-
-            _wheelTransform.DOLocalRotate(new Vector3(0, 0, _wheelRotateData.GetRandomDestination()), Durations.DurationWheelSpin, RotateMode.FastBeyond360)
+            _wheelTransform.localRotation = Quaternion.identity;
+            _wheelTransform.DOLocalRotate(new Vector3(0, 0, _wheelRotateData.GetDesiredDestination(randomIndex:randomindex)), Durations.DurationWheelSpin, RotateMode.FastBeyond360)
                 .SetRelative(true).SetEase(Ease.OutBack)
                 .OnComplete(()=>OnWheelSpinEnd?.Invoke());
 

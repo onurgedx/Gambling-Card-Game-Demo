@@ -7,9 +7,14 @@ public class WheelRotateData : ScriptableObject
 {
    [SerializeField] private List<float> _wheelDestinationAnglesList = new List<float>();
     
-    public float GetRandomDestination()
+    public int GetRandomIndexAtAnglesList()
     {
-        return _wheelDestinationAnglesList[Random.Range(0, _wheelDestinationAnglesList.Count)];
+        return Random.Range(0, _wheelDestinationAnglesList.Count);
     }
+    public float GetDesiredDestination(int randomIndex)
+    {
+        return _wheelDestinationAnglesList[randomIndex];
+    }
+    
 
 }

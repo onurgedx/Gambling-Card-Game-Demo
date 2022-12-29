@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5350662928452842039}
   - component: {fileID: 7532167993403947888}
   - component: {fileID: 7981986145444192786}
+  - component: {fileID: 6646138055874808199}
   m_Layer: 5
   m_Name: ui_gainable_parent
   m_TagString: Untagged
@@ -65,6 +66,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _deciderGainable: {fileID: 7532167993403947888}
   _gainableImage: {fileID: 5350662929135744072}
+--- !u!114 &6646138055874808199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5350662928452842038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58ee85c020b73649a01043915b5ac7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gainable: {fileID: 7532167993403947888}
+  _transformImage: {fileID: 5350662929135744075}
 --- !u!1001 &4970381206000466521
 PrefabInstance:
   m_ObjectHideFlags: 0
