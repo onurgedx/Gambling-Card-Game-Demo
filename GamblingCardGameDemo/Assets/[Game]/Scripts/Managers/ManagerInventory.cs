@@ -1,3 +1,5 @@
+using Game.Interfaces;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,18 +10,47 @@ namespace Game.Managers
     public class ManagerInventory : MonoSingleton<ManagerInventory>
     {
 
-        
-        private List<IItem> _items;
+        public Action OnItemGained;
+        public Action OnAllItemLose;
 
-        public void AddItem(IItem item)
+        private List<BaseItem> _items = new List<BaseItem>();
+
+        private void OnEnable()
         {
-            _items.Add(item);
+            ManagerResultSpinWheel.Instance.OnResultDetermined += ItemProcess;
+            
+        }
+        private void OnDisable()
+        {
+            ManagerResultSpinWheel.Instance.OnResultDetermined -= ItemProcess;
+            
+        }
+        private void ItemProcess(IGainable gainable)
+        {
+
+            BaseItem item = new BaseItem(gainable.GetGainableData());
+
+
+
+            AddItem(item);
+
 
         }
-        public void RemoveItem(IItem item)
-        {
-            _items.Remove(item);
 
+        private void AddItem(BaseItem item)
+        {
+
+
+
+            _items.Add(item);
+
+            OnItemGained?.Invoke();
+
+        }
+        private void RemoveAllItems()
+        {
+            _items = new List<BaseItem>();
+            OnAllItemLose?.Invoke();
         }
 
 

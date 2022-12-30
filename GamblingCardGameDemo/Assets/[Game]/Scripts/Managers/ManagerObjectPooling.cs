@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 namespace Game.Managers
 {
     public class ManagerObjectPooling : MonoSingleton<ManagerObjectPooling>
@@ -14,7 +15,7 @@ namespace Game.Managers
         {
             public T ReferancePrefab;
             public List<T> PoolList;
-
+            public Transform ParentOfTransform;
             public T GetPoolMember()
             {
                 for (int i = 0; i < PoolList.Count; i++)
@@ -28,7 +29,7 @@ namespace Game.Managers
                     }
                 }
 
-                GameObject poolMemberGameObject = Instantiate(ReferancePrefab.gameObject);
+                GameObject poolMemberGameObject = Instantiate(ReferancePrefab.gameObject,ParentOfTransform);
                 poolMemberGameObject.SetActive(true);
                 T poolMember = poolMemberGameObject.GetComponent<T>();
                 PoolList.Add(poolMember);
@@ -40,6 +41,10 @@ namespace Game.Managers
 
         }
 
+
+        public Pool<Image> ImageForItemEffectPool = new Pool<Image>();
+
+      
 
     }
 }

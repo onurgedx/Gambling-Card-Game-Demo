@@ -10,6 +10,10 @@ namespace Game.Interfaces
     {
         public void SetGainableData(GainableData gainableData);
 
+        public Vector3 GetPosition();
+
+        public GainableData GetGainableData();
+
     }
 
 }

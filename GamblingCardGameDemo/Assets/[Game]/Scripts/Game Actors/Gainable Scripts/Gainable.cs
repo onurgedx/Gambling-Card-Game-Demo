@@ -11,11 +11,17 @@ public class Gainable : MonoBehaviour ,IGainable
 
     private GainableData _gainableData;
 
-    
+    private Transform _transform;
 
+    private void Awake()
+    {
+        _transform = transform;
+    }
 
-
-    
+    public Vector3 GetPosition()
+    {
+        return _transform.position;
+    }
 
     public void SetGainableData(GainableData gainableData)
     {
@@ -27,8 +33,9 @@ public class Gainable : MonoBehaviour ,IGainable
 
     }
 
+    public GainableData GetGainableData()
+    {
+        return _gainableData;
 
-
-
-
+    }
 }

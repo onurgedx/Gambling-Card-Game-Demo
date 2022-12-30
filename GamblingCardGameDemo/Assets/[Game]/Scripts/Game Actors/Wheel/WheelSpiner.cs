@@ -11,7 +11,7 @@ public class WheelSpiner : MonoBehaviour
     public Action OnSpinStart;
     public Action OnSpinEnd;
     public Action OnSpinEndDelayed;
-    //public Action OnSpinEnd
+    
     [SerializeField] private Transform _wheelTransform;
     [SerializeField] private WheelController _wheelController;
 
@@ -20,12 +20,15 @@ public class WheelSpiner : MonoBehaviour
     {
         _waitforSecondsOfSpinEndDelay = new WaitForSeconds(Durations.DurationDelayAfterSpinEnd);
         OnSpinEnd += RunAfterAWhileSpinEnd;
-        
+       
 
     }
+
+    
     private void OnEnable()
     {
         _wheelController.WheelSpinEvent += Spin;
+    
         
     }
     private void OnDisable()
