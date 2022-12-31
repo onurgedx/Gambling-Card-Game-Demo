@@ -48,7 +48,7 @@ namespace Game.Managers
         }
         private void Start()
         {
-            CurrencyAmount = PlayerPrefs.GetInt(GlobalStrings.CurrencyAmount);
+            CurrencyAmount = PlayerPrefs.GetInt(GlobalStrings.CurrencyAmount,100);
             
         }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Game.Managers;
-
+[DefaultExecutionOrder(5)]
 public class WheelButtonInteractableController : MonoBehaviour
 {
 
@@ -18,12 +18,10 @@ public class WheelButtonInteractableController : MonoBehaviour
 
     private void AdjustInteractableButton(int currencyAmount)
     {
-        bool isAfford = _wheelData.SpinCost < currencyAmount;
+        bool isAfford = _wheelData.SpinCost <= currencyAmount;
         if (isAfford)
         {
             ActivateInteractable();
-
-
         }
         else
         {
