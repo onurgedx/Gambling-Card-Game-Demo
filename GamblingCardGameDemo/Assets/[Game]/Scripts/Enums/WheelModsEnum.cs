@@ -5,9 +5,9 @@ using UnityEngine;
 namespace Game.Enums
 {
 
-    public enum SpinType
+    public enum WheelModsEnum
     {
-        Bronze,
+        Bronze=1,
         Silver =5,
         Gold =30
 

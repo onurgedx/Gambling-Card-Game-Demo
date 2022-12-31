@@ -15,7 +15,9 @@ namespace Game.Managers
         
 
         [SerializeField] private WheelRotateData _wheelRotateData;
-         
+
+        public Action OnSpinStart;
+        
 
 
 
@@ -24,6 +26,8 @@ namespace Game.Managers
 
         public void SpinWheel(Action onSpinStart, Action onSpinEnd, Transform wheelTransform)
         {
+            OnSpinStart?.Invoke();
+
             onSpinStart?.Invoke();
             int randomindex = _wheelRotateData.GetRandomIndexAtAnglesList();
             

@@ -434,7 +434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c53b2057e3392014d9de727f786dd438, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 119c8249f9dab594ca5b37a2718052d3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -615,6 +615,8 @@ GameObject:
   - component: {fileID: 7829717012852255910}
   - component: {fileID: 3958294179318409576}
   - component: {fileID: 5941688687435345383}
+  - component: {fileID: 4841864424058055379}
+  - component: {fileID: 4556612422443992134}
   m_Layer: 5
   m_Name: ui_parent_spinfortune
   m_TagString: Untagged
@@ -741,6 +743,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _wheelData: {fileID: 11400000, guid: d4f09e0d7f6b24e4da8b16c0dc9e62db, type: 2}
   _myButton: {fileID: 2664860569711900776}
+--- !u!114 &4841864424058055379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2664860570351926796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65797f1155d3e1542a9870dea03054ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wheelSpiner: {fileID: 3889768903393994530}
+--- !u!114 &4556612422443992134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2664860570351926796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80a9cfdbcf80fcf4b9681e5d36603910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wheelImageTypesData: {fileID: 11400000, guid: 8d4d59fe4dec293439c6d7d71709d5c5,
+    type: 2}
+  _wheelImage: {fileID: 2664860569956510657}
+  _indicatorImage: {fileID: 2664860570692479525}
 --- !u!1 &2664860570502633716
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,7 +988,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 405791f9ec78d3b46999ef703e94d49f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2d634d226a52969498089fa7272bca28, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1

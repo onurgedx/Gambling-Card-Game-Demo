@@ -35,7 +35,7 @@ namespace Game.Managers
                     }
 
                 
-                    _currencyAmount = Mathf.Clamp( value ,0,100000);
+                    _currencyAmount = Mathf.Clamp( value ,14,100000);
 
                     OnCurrencyAmountChanged?.Invoke(_currencyAmount);
 

@@ -27,17 +27,35 @@ namespace Game.Managers
                 if (value != _spinCount)
                 {
 
+                    
                     _spinCount = value;
+
                     OnSpinCountChanged?.Invoke(_spinCount);
 
                    
-                   
-
 
                 }
             }
 
         }
+
+        private void OnEnable()
+        {
+            ManagerWheelSpiner.Instance.OnSpinStart += IncreaseSpinCount;
+        }
+        private void OnDisable()
+        {
+            
+            ManagerWheelSpiner.Instance.OnSpinStart -= IncreaseSpinCount;
+        }
+
+        private void IncreaseSpinCount()
+        {
+            SpinCount++;
+        }
+
+
+        
 
 
 
