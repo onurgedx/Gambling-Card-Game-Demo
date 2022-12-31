@@ -9,7 +9,10 @@ public class InventoryGainItemEffect : MonoBehaviour
 {
     [SerializeField] private Transform _inventoryImageTransform;
 
-
+    private void OnValidate()
+    {
+        _inventoryImageTransform = GameObject.Find("ui_parent_inventory").transform;
+    }
     private void OnEnable()
     {
         ManagerResultSpinWheel.Instance.OnResultDetermined += EffectProcess;
@@ -25,7 +28,7 @@ public class InventoryGainItemEffect : MonoBehaviour
 
 
        Image imageOfFakeEffectGain = ManagerObjectPooling.Instance.ImageForItemEffectPool.GetPoolMember();
-        imageOfFakeEffectGain.transform.position = gainable.GetPosition();
+        imageOfFakeEffectGain.transform.position = gainable.GetPosition();  
         imageOfFakeEffectGain.sprite = gainable.GetGainableData().GainableSprite;
         imageOfFakeEffectGain.transform.DOMove(_inventoryImageTransform.position, Durations.DurationArriveToInventoryImagePosition)
             .OnComplete(()=>imageOfFakeEffectGain.gameObject.SetActive(false));
