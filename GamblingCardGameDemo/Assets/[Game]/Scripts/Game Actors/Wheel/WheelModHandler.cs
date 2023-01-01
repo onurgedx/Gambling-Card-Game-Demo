@@ -1,74 +1,67 @@
+using Game.Enums;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Game.Enums;
-using Game.Managers;
-using UnityEngine.UI;
 
 public class WheelModHandler : MonoBehaviour
 {
+    [SerializeField] private WheelSpinCounter _wheelSpinCounter;
+    public Action<WheelModsEnum> OnWheelModChanged;
+
+    private WheelModsEnum _wheelMod= WheelModsEnum.Bronze;
+    public WheelModsEnum WheelMod
+    {
+        get
+        {
+            return _wheelMod;
+        }
+
+        set
+        {
+            if (_wheelMod != value)
+            {
+                _wheelMod = value;
+                OnWheelModChanged?.Invoke(_wheelMod);
+            }
 
 
-
-   [SerializeField] private WheelImageTypesData _wheelImageTypesData;
-    [SerializeField] private Image _wheelImage;
-    [SerializeField] private Image _indicatorImage;
-
-    private WheelModsEnum _wheelMod = WheelModsEnum.Bronze;
+        }
+    }
 
     private void OnEnable()
     {
-        ManagerWheelsMod.Instance.OnWheelModChanged += SetProperImages;
+        _wheelSpinCounter.OnSpinCountChanged += UpdateWheelMod;
         
+
     }
 
     private void OnDisable()
     {
-        ManagerWheelsMod.Instance.OnWheelModChanged -= SetProperImages;
-        
+        _wheelSpinCounter.OnSpinCountChanged -= UpdateWheelMod;
     }
-
-    private void SetProperImages(WheelModsEnum wheelMod)
+    private void UpdateWheelMod(int spinCount)
     {
+        WheelModsEnum temp_wheelMod;
 
-        if (wheelMod == _wheelMod) return;
-        _wheelMod = wheelMod;
-
-        List<Sprite> spritesWheelAndIndicator = new List<Sprite>();
-        
-
-        switch(wheelMod)
+        if (spinCount % 30 == 0)
         {
+            temp_wheelMod = WheelModsEnum.Gold;
 
-            case WheelModsEnum.Bronze:
-                spritesWheelAndIndicator = _wheelImageTypesData.WheelAndIndicatorBronze;
-
-
-                break;
-            case WheelModsEnum.Silver:
-
-                spritesWheelAndIndicator = _wheelImageTypesData.WheelAndIndicatorSilver;
-                break;
-            case WheelModsEnum.Gold:
-                spritesWheelAndIndicator = _wheelImageTypesData.WheelAndIndicatorGold;
-
-                break;
 
         }
+        else if (spinCount % 5 == 0)
+        {
+            temp_wheelMod = WheelModsEnum.Silver;
+        }
+        else
+        {
+            temp_wheelMod = WheelModsEnum.Bronze;
+        }
 
-        _wheelImage.sprite = spritesWheelAndIndicator[0];
-        _indicatorImage.sprite = spritesWheelAndIndicator[1];
+        WheelMod = temp_wheelMod;
 
     }
-
-
-
-
-
-
-
-
-
 
 
 
