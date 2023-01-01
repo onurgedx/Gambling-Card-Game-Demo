@@ -10,10 +10,12 @@ namespace Game.Managers
     public class ManagerInventory : MonoSingleton<ManagerInventory>
     {
 
-        public Action OnItemGained;
+        public Action<int> OnItemGained;
         public Action OnAllItemLose;
 
         private List<BaseItem> _items = new List<BaseItem>();
+
+
 
         private void OnEnable()
         {
@@ -44,7 +46,7 @@ namespace Game.Managers
 
             _items.Add(item);
 
-            OnItemGained?.Invoke();
+            OnItemGained?.Invoke(_items.Count);
 
         }
         private void RemoveAllItems()

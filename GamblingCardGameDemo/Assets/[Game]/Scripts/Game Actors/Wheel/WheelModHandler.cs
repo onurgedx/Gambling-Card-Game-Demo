@@ -42,6 +42,7 @@ public class WheelModHandler : MonoBehaviour
     }
     private void UpdateWheelMod(int spinCount)
     {
+
         WheelModsEnum temp_wheelMod;
 
         if (spinCount % 30 == 0)
@@ -56,7 +57,9 @@ public class WheelModHandler : MonoBehaviour
         }
         else
         {
+
             temp_wheelMod = WheelModsEnum.Bronze;
+
         }
 
         WheelMod = temp_wheelMod;
