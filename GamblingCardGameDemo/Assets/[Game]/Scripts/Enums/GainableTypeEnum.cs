@@ -20,7 +20,8 @@ namespace Game.Enums
         WeaponSniper,
         Projectile,
         Upgrade,
-        VisualProp
+        VisualProp,
+        LoseAllItems
 
            
 

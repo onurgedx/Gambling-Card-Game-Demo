@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class WheelModHandler : MonoBehaviour
 {
+    [SerializeField] private WheelGainableSpawner _wheelGainableSpawner;
     [SerializeField] private WheelSpinCounter _wheelSpinCounter;
     public Action<WheelModsEnum> OnWheelModChanged;
 
@@ -29,16 +30,18 @@ public class WheelModHandler : MonoBehaviour
         }
     }
 
+    
     private void OnEnable()
     {
         _wheelSpinCounter.OnSpinCountChanged += UpdateWheelMod;
-        
+        _wheelGainableSpawner.WheelModHandler += GetWheelMod;
 
     }
 
     private void OnDisable()
     {
         _wheelSpinCounter.OnSpinCountChanged -= UpdateWheelMod;
+        _wheelGainableSpawner.WheelModHandler -= GetWheelMod;
     }
     private void UpdateWheelMod(int spinCount)
     {
@@ -66,6 +69,11 @@ public class WheelModHandler : MonoBehaviour
 
     }
 
+
+    private WheelModsEnum GetWheelMod()
+    {
+        return WheelMod;
+    }
 
 
 }

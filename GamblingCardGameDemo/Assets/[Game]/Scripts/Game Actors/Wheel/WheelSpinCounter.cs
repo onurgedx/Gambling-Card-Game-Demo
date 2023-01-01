@@ -34,7 +34,7 @@ public class WheelSpinCounter : MonoBehaviour
     }
     private void Start()
     {
-        _wheelSpiner.OnSpinEndDelayed += IncreaseSpinCount;
+        _wheelSpiner.OnSpinEnd += IncreaseSpinCount;
     }
     private void IncreaseSpinCount()
     {

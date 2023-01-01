@@ -21,7 +21,7 @@ public class ItemCountTextUpdater : MonoBehaviour
         ManagerInventory.Instance.OnAllItemLose -= UpdateItemCount;
         
     }
-    private void UpdateItemCount(int itemCount)
+    private void UpdateItemCount(int itemCount,BaseItem item)
     {
         _textItemCount.text = itemCount.ToString();
 

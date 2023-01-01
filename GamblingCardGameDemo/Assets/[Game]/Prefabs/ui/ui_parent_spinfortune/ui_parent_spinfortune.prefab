@@ -826,6 +826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88dfb52cb23f2c9458940ab08ed49d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _wheelGainableSpawner: {fileID: 4738378409666341783}
   _wheelSpinCounter: {fileID: 4734699313360812422}
 --- !u!114 &4734699313360812422
 MonoBehaviour:

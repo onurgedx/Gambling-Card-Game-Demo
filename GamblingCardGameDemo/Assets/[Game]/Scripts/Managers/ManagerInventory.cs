@@ -10,7 +10,8 @@ namespace Game.Managers
     public class ManagerInventory : MonoSingleton<ManagerInventory>
     {
 
-        public Action<int> OnItemGained;
+        public Action<int,BaseItem> OnItemGained;
+
         public Action OnAllItemLose;
 
         private List<BaseItem> _items = new List<BaseItem>();
@@ -19,6 +20,7 @@ namespace Game.Managers
 
         private void OnEnable()
         {
+
             ManagerResultSpinWheel.Instance.OnResultDetermined += ItemProcess;
             
         }
@@ -30,31 +32,45 @@ namespace Game.Managers
         private void ItemProcess(IGainable gainable)
         {
 
-            BaseItem item = new BaseItem(gainable.GetGainableData());
+
+            BaseItem item;
+             
+            switch (gainable.GetGainableData().GainableType)
+            {
+                case Enums.GainableTypeEnum.LoseAllItems:
+                    item = new BombLoseItem(gainable.GetGainableData());
+                  
+                    break;
+                default:
+                    item = new BaseItem(gainable.GetGainableData());
+                    break;
 
 
+            }
 
-            AddItem(item);
 
+            item.JoinInventory(_items,OnItemGained);
 
+            
+
+           
         }
 
-        private void AddItem(BaseItem item)
+        
+
+
+        public void RemoveAllItems()
         {
 
-
-
-            _items.Add(item);
-
-            OnItemGained?.Invoke(_items.Count);
-
-        }
-        private void RemoveAllItems()
-        {
+            
             _items = new List<BaseItem>();
+
             OnAllItemLose?.Invoke();
+
+
         }
 
+        
 
         
 

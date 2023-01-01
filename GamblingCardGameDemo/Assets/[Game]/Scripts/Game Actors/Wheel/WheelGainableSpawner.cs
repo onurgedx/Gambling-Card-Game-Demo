@@ -5,18 +5,24 @@ using UnityEngine;
 using System;
 using System.Linq;
 using Game.Managers;
+using Game.Enums;
+[DefaultExecutionOrder(8)]
 public class WheelGainableSpawner : MonoBehaviour
 {
 
      private List<IGainable> _gainablesList = new List<IGainable>();
     [SerializeField] private WheelSpiner _wheelSpiner;
     [SerializeField] private WheelSpinResult _wheelSpinResult;
+    
 
+    public delegate WheelModsEnum WheelModeDelegate();
+    public WheelModeDelegate WheelModHandler;
 
     private void OnEnable()
     {
         _wheelSpiner.OnSpinEndDelayed += SpawnGainables;
         _wheelSpinResult.GainableList = GetGainables;
+        
 
     }
 
@@ -38,7 +44,7 @@ public class WheelGainableSpawner : MonoBehaviour
 
     private void SpawnGainables()
     {
-        ManagerGainableSpawner.Instance.DetermineNewGainables(_gainablesList);
+        ManagerGainableSpawner.Instance.DetermineNewGainables(_gainablesList, WheelModHandler());
 
     }
 
