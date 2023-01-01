@@ -6,6 +6,7 @@ using UnityEngine;
 namespace Game.Managers
 {
 
+   
     public class ManagerCurrency : MonoSingleton<ManagerCurrency>
     {
 

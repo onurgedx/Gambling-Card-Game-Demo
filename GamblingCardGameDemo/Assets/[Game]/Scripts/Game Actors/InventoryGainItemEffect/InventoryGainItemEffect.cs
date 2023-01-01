@@ -9,10 +9,10 @@ public class InventoryGainItemEffect : MonoBehaviour
 {
     [SerializeField] private Transform _inventoryImageTransform;
 
-    private void OnValidate()
-    {
-        _inventoryImageTransform = GameObject.Find("ui_parent_inventory").transform;
-    }
+    //private void OnValidate()
+    //{
+    //    _inventoryImageTransform = GameObject.Find("ui_parent_inventory").transform;
+    //}
     private void OnEnable()
     {
         ManagerResultSpinWheel.Instance.OnResultDetermined += EffectProcess;

@@ -23,7 +23,12 @@ public class ItemCountTextUpdater : MonoBehaviour
     }
     private void UpdateItemCount(int itemCount,BaseItem item)
     {
+        if (_textItemCount != null)
+        {
+
         _textItemCount.text = itemCount.ToString();
+        }
+
 
     }
 

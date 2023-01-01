@@ -10,14 +10,12 @@ namespace Game.Managers
     {
 
 
+        public Button StartButton;
+        public Button MenuButton;
+         
+
 
         
-
-
-
-      
-
-
 
 
     }
