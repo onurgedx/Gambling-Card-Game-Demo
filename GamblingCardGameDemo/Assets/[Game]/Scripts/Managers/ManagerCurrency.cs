@@ -36,7 +36,7 @@ namespace Game.Managers
                     }
 
                 
-                    _currencyAmount = Mathf.Clamp( value ,14,100000);
+                    _currencyAmount = Mathf.Clamp( value ,0,100000);
 
                     OnCurrencyAmountChanged?.Invoke(_currencyAmount);
 
@@ -50,8 +50,9 @@ namespace Game.Managers
         private void Start()
         {
             CurrencyAmount = PlayerPrefs.GetInt(GlobalStrings.CurrencyAmount,100);
-            
+            ManagerUiButtons.Instance.AddMoneyButton.onClick.AddListener(IncreaseCurrency);
         }
+
 
 
 
@@ -65,6 +66,11 @@ namespace Game.Managers
         {
             CurrencyAmount += increaseAmount;
 
+        }
+
+        private void IncreaseCurrency()
+        {
+            IncreaseCurrency(100);
         }
 
 

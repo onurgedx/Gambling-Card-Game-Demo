@@ -12,6 +12,7 @@ namespace Game.Managers
 
         public Button StartButton;
         public Button MenuButton;
+        public Button AddMoneyButton;
          
 
 
