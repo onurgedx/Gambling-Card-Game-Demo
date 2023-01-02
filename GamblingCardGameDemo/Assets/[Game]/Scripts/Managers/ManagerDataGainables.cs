@@ -24,15 +24,35 @@ namespace Game.Managers
 
         private void Start()
         {
-
-            _gainableBronzeDataList= _gainableDataList.FindAll(value => value.Value == Enums.ValuesEnum.Bronze);
+            UpdateGainableCountsAccordingToDropRate();
+            _gainableBronzeDataList = _gainableDataList.FindAll(value => value.Value == Enums.ValuesEnum.Bronze);
             _gainableSilverDataList= _gainableDataList.FindAll(value => value.Value == Enums.ValuesEnum.Silver);
             _gainableGoldDataList= _gainableDataList.FindAll(value => value.Value == Enums.ValuesEnum.Gold);
 
 
         }
 
+        private void UpdateGainableCountsAccordingToDropRate()
+        {
+            List<GainableData> tempGainables = new List<GainableData>();
+            tempGainables.AddRange(_gainableDataList);
+            for (int i = 0; i < tempGainables.Count; i++)
+            {
+                int tempGainableDataCount =(int) tempGainables[i].DropRate*10;
 
+                for (int k = 0; k < tempGainableDataCount; k++)
+                {
+                    _gainableDataList.Add(tempGainables[i]);
+
+
+                }
+
+
+
+            }
+
+
+        }
         
 
         public GainableData GetRandomGainableData(WheelModsEnum wheelMod)

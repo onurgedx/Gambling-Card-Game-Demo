@@ -2254,7 +2254,7 @@ GameObject:
   - component: {fileID: 1069721690}
   - component: {fileID: 1069721691}
   m_Layer: 0
-  m_Name: InventoryGainItemEffector
+  m_Name: Inventory_Gain_Item_Effector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2799,7 +2799,7 @@ GameObject:
   - component: {fileID: 2035835414}
   - component: {fileID: 2035835415}
   m_Layer: 0
-  m_Name: InventoryItemCount UI Text Updater
+  m_Name: Inventory_Item_Count_UI_Text_Updater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
