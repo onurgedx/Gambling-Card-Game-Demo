@@ -14,7 +14,7 @@ public class GainableData : ScriptableObject
     public int ValueAsMoney = 10;
     public GainableTypeEnum GainableType = GainableTypeEnum.Chest;
     [Range(0,1)]
-    public float DropRate=0.5f;
+    public float DropRate=0f;
     
     
 }

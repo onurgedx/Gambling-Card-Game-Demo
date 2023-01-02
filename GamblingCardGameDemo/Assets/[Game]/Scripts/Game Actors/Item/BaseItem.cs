@@ -23,7 +23,7 @@ public class BaseItem : IItem
         return _gainableData;
     }
    
-    public virtual void JoinInventory(List<BaseItem> items,Action<int, BaseItem> onJoinInventory)
+    public virtual void JoinTempInventory(List<BaseItem> items,Action<int, BaseItem> onJoinInventory)
     {
         items.Add(this);
         onJoinInventory?.Invoke(items.Count,this);

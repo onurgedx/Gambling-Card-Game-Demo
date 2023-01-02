@@ -11,14 +11,14 @@ public class ItemCountTextUpdater : MonoBehaviour
 
     private void OnEnable()
     {
-        ManagerInventory.Instance.OnItemGained += UpdateItemCount ;
-        ManagerInventory.Instance.OnAllItemLose += UpdateItemCount;
+        ManagerInventory.Instance.OnTempItemGained += UpdateItemCount ;
+        ManagerInventory.Instance.OnAllTempItemLose += UpdateItemCount;
         
     }
     private void OnDisable()
     {
-        ManagerInventory.Instance.OnItemGained -= UpdateItemCount ;
-        ManagerInventory.Instance.OnAllItemLose -= UpdateItemCount;
+        ManagerInventory.Instance.OnTempItemGained -= UpdateItemCount ;
+        ManagerInventory.Instance.OnAllTempItemLose -= UpdateItemCount;
         
     }
     private void UpdateItemCount(int itemCount,BaseItem item)

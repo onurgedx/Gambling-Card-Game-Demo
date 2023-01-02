@@ -11,7 +11,7 @@ public class BombLoseItem : BaseItem
 
     }
 
-    public override void JoinInventory(List<BaseItem> items, Action<int, BaseItem> onJoinInventory)
+    public override void JoinTempInventory(List<BaseItem> items, Action<int, BaseItem> onJoinInventory)
     {
         ManagerInventory.Instance.RemoveAllItems();
 

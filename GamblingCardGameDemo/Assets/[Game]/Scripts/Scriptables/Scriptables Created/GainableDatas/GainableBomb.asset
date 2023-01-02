@@ -16,4 +16,4 @@ MonoBehaviour:
   Value: 0
   ValueAsMoney: -10
   GainableType: 13
-  DropRate: 0.78
+  DropRate: 0.1

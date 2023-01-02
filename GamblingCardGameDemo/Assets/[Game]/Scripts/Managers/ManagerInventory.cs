@@ -10,26 +10,32 @@ namespace Game.Managers
     public class ManagerInventory : MonoSingleton<ManagerInventory>
     {
 
-        public Action<int,BaseItem> OnItemGained;
+        public Action<int,BaseItem> OnTempItemGained;
 
-        public Action OnAllItemLose;
+        public Action<List<BaseItem>> OnMainItemsGained;
 
-        private List<BaseItem> _items = new List<BaseItem>();
+        public Action OnAllTempItemLose;
 
+        private List<BaseItem> _tempItemsList = new List<BaseItem>();
 
+        private List<BaseItem> _itemsList = new List<BaseItem>();
+
+        
 
         private void OnEnable()
         {
 
-            ManagerResultSpinWheel.Instance.OnResultDetermined += ItemProcess;
+            ManagerResultSpinWheel.Instance.OnResultDetermined += GainItemToTempInventory;
+            ManagerLevel.Instance.OnLevelEnd += GainItemsToMainInventory;
             
         }
         private void OnDisable()
         {
-            ManagerResultSpinWheel.Instance.OnResultDetermined -= ItemProcess;
+            ManagerResultSpinWheel.Instance.OnResultDetermined -= GainItemToTempInventory;
+            ManagerLevel.Instance.OnLevelEnd -= GainItemsToMainInventory;
             
         }
-        private void ItemProcess(IGainable gainable)
+        private void GainItemToTempInventory(IGainable gainable)
         {
 
 
@@ -49,23 +55,36 @@ namespace Game.Managers
             }
 
 
-            item.JoinInventory(_items,OnItemGained);
+            item.JoinTempInventory(_tempItemsList,OnTempItemGained);
 
             
 
            
         }
-
         
+        
+        private void GainItemsToMainInventory()
+        {
+            for (int i = 0; i < _tempItemsList.Count; i++)
+            {
+                _itemsList.Add(_tempItemsList[i]);
+                
 
+            }
+
+            _tempItemsList = new List<BaseItem>();
+
+            OnMainItemsGained?.Invoke(_itemsList);
+
+        }
 
         public void RemoveAllItems()
         {
 
             
-            _items = new List<BaseItem>();
+            _tempItemsList = new List<BaseItem>();
 
-            OnAllItemLose?.Invoke();
+            OnAllTempItemLose?.Invoke();
 
 
         }
